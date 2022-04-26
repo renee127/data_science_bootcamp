@@ -7,10 +7,10 @@ Collection of some programming assignments completed for Practicum's Data Scient
 | [classifying_churn](https://github.com/renee127/classifying_churn)  | [classifying_churn.ipynb](https://github.com/renee127/classifying_churn/blob/main/classifying_churn.ipynb)  | Used machine learning and data balancing techniques to create a predictive model for churn producing an AUC-ROC higher than the target AUC-ROC (0.93 versus goal of > 0.88).  | NumPy, Pandas, matplotlib, seaborn, math, time, functools, re, IPython.display, sklearn, catboost, lightgbm, xgboost, random, sys  | 15 (final)  |
 | [computer_vision](https://github.com/renee127/data_science_bootcamp/tree/main/computer_vision) | [computer_vision.ipynb](https://github.com/renee127/data_science_bootcamp/blob/main/computer_vision/computer_vision.ipynb)  | Use supplied photos to build and test a regression model to predict age on a continuous scale.  | Pandas, Seaborn, matplotlib, tensorflow, keras  | 14  |
 | [ml_for_text](https://github.com/renee127/data_science_bootcamp/tree/main/ml_for_text) | [ml_for_text.ipynb](https://github.com/renee127/data_science_bootcamp/blob/main/ml_for_text/ml_for_texts.ipynb) | Train a model for classifying positive and negative reviews with a F1 score of at least 0.85. | NumPy, Pandas, matplotlib, seaborn, re, math, tgdm | 13  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 12  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 11  |
-| ------------- | ------------- | ------------- | ------------- | 10  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 9  |
+| [time_series]()  | [time_series.ipynb]()  | Content Cell  | Content Cell  | 12  |
+| [numerical_methods]()  | [numerical_methods.ipynb]()   | Content Cell  | Content Cell  | 11  |
+| [linear_algebra]() | [linear_algebra.ipynb]() | ------------- | ------------- | 10  |
+| [ml_in_industry]()  | [ml_in_industry.ipynb]()   |  Find the ML model that best predicts the two target values given the predictor variables present for gold extraction from ore.  | Content Cell  | 9  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | 8  |
 | ------------- | ------------- | ------------- | ------------- | 7  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | 6  |
