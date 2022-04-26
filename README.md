@@ -18,7 +18,8 @@ Collection of some programming assignments completed for Practicum's Data Scient
 | ------------- | ------------- | ------------- | ------------- | 4 |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | 3 |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | 2  |
-| ------------- | ------------- | ------------- | ------------- | 1  |
+| [credit_scoring](https://github.com/renee127/data_science_bootcamp/tree/main/15_credit_scoring_sprint_1) | 
+15_credit_scoring_sprint_1.ipynb ](https://github.com/renee127/data_science_bootcamp/blob/main/15_data_preprocessing_spring_1/15_data_preprocessing_sprint_1.ipynb) | Create a credit scoring of a potential customer for a loan examining marital status and number of children as features. | NumPy, Pandas | 1  |
 
 
 
