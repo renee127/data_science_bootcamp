@@ -17,7 +17,7 @@ Collection of some programming assignments completed for Practicum's Data Scient
 | [sql]() | [sql.ipynb]() | Content Cell  | Content Cell  | 5  |
 | [hypothesis_testing]() | [hypothesis_testing.ipynb]() | ------------- | ------------- | 4 |
 | [statistical_data_analysis]() | [statistical_data_analysis.ipynb]() | Content Cell  | Content Cell  | 3 |
-| [exploratory_data_analysis]() | [exploratory_data_analysis.ipynb]()  | Use EDA to study data collected over the last few years from online advertisements and determine which factors influence the price of a vehicle.  |  NumPy, Pandas, matplotlib  | 2  |
+| [exploratory_data_analysis](https://github.com/renee127/data_science_bootcamp/tree/main/exploratory_data_analysis) | [exploratory_data_analysis.ipynb](https://github.com/renee127/data_science_bootcamp/blob/main/exploratory_data_analysis/exploratory_data_analysis.ipynb)  | Use EDA to study data collected over the last few years from online advertisements and determine which factors influence the price of a vehicle.  |  NumPy, Pandas, matplotlib  | 2  |
 | [credit_scoring](https://github.com/renee127/data_science_bootcamp/tree/main/credit_scoring) | [15_credit_scoring_sprint_1.ipynb](https://github.com/renee127/data_science_bootcamp/blob/main/credit_scoring/credit_scoring.ipynb) | Create a credit score for potential customers for a loan examining marital status and number of children as features. | NumPy, Pandas | 1  |
 
 
