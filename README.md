@@ -11,13 +11,13 @@ Collection of some programming assignments completed for Practicum's Data Scient
 | [numerical_methods]()  | [numerical_methods.ipynb]()   | Content Cell  | Content Cell  | 11  |
 | [linear_algebra]() | [linear_algebra.ipynb]() | ------------- | ------------- | 10  |
 | [ml_in_industry]()  | [ml_in_industry.ipynb]()   |  Find the ML model that best predicts the two target values given the predictor variables present for gold extraction from ore.  | Content Cell  | 9  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 8  |
-| ------------- | ------------- | ------------- | ------------- | 7  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 6  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 5  |
-| ------------- | ------------- | ------------- | ------------- | 4 |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 3 |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | 2  |
+| [ml_in_business]()  | [ml_in_business.ipynb]() | Content Cell  | Content Cell  | 8  |
+| [supervised_ml]() | [supervised_ml.ipynb]()  | ------------- | ------------- | 7  |
+| [machine_learning]() | [machine_learning.ipynb]()  | Content Cell  | Content Cell  | 6  |
+| [sql]() | [sql.ipynb]() | Content Cell  | Content Cell  | 5  |
+| [hypothesis_testing]() | [hypothesis_testing.ipynb]() | ------------- | ------------- | 4 |
+| [statistical_data_analysis]() | [statistical_data_analysis.ipynb]() | Content Cell  | Content Cell  | 3 |
+| [exploratory_data_analysis]() | [exploratory_data_analysis.ipynb]()  | Use EDA to study data collected over the last few years from online advertisements and determine which factors influence the price of a vehicle.  |  NumPy, Pandas, matplotlib  | 2  |
 | [credit_scoring](https://github.com/renee127/data_science_bootcamp/tree/main/credit_scoring) | [15_credit_scoring_sprint_1.ipynb](https://github.com/renee127/data_science_bootcamp/blob/main/credit_scoring/credit_scoring.ipynb) | Create a credit score for potential customers for a loan examining marital status and number of children as features. | NumPy, Pandas | 1  |
 
 
