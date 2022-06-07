@@ -1,9 +1,48 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Initialization
+# <a class="anchor" id="top_of_document"></a>
+# 
+# 
+# # Project Description
 
-# In[1]:
+# This convolutional neural network generates a model that predicts a person's age given a photo with a Mean Absolute Error (MAE)=5.973 (below the upper limit of 8.0). The model uses ResNet50 as the backbone, ReLU for activation, epochs=24, Adam lr=0.0001, and a batch size of 32. 
+# 
+# __Project Overview__
+# - They want a program that *determines a person's age from a photo*.
+# - The Good Seed supermarket chain seeks to evaluate if machine learning can help them identify underage customers. 
+# - They want to make sure they do not sell alcohol to people below the legal drinking age.
+# - The store has cameras in the checkout area which are triggered when a person is buying alcohol.
+# 
+# __Data Description__
+# - Data is available from [ChaLearn Looking at People](https://gesture.chalearn.org).
+# - The set of photographs of people have a corresponding label with their ages indicated.
+# - A csv file (`labels.csv`) with two columns: file_name and real_age.
+# 
+# __Project Goal__
+# - Create a regression model that predicts a person's age based on an image.
+# - Build a generator with the ImageDataGenerator generator to process images in batches (to reduce computational resources).
+# - The Mean Absolute Error(MAE) must be less than 8.0.
+# 
+# Steps:
+# 1. [Load and inspect the data](#load_inspect)
+# 2. [Data preprocessing](#data_preprocessing)
+# 3. [Exploratory data analysis](#exploratory_data_analysis)
+# 4. [Modeling plan](#modeling_plan)
+# 5. [GPU_script](#GPU_script) 
+# 6. [Output](#output)
+# 7. [Training Code](#training_code)
+# 8. [Conclusions](#conclusions)
+# 
+# Report prepared March 2022
+
+# <a class="anchor" id="load_inspect"></a>
+# 
+# # Data Preprocessing & Exploration
+# 
+# ## Import libraries
+
+# In[ ]:
 
 
 # import libraries
@@ -24,17 +63,9 @@ if not sys.warnoptions:
     warnings.simplefilter("ignore");
 
 
-# ## Load Data
+# ## Import files
 
-# The dataset is stored in the `/datasets/faces/` folder, there you can find
-# - The `final_files` folder with 7.6k photos
-# - The `labels.csv` file with labels, with two columns: `file_name` and `real_age`
-# 
-# Given the fact that the number of image files is rather high, it is advisable to avoid reading them all at once, which would greatly consume computational resources. We recommend you build a generator with the ImageDataGenerator generator. This method was explained in Chapter 3, Lesson 7 of this course.
-# 
-# The label file can be loaded as an usual CSV file.
-
-# In[2]:
+# In[ ]:
 
 
 # read labels file
@@ -75,23 +106,19 @@ age_range
 labels.shape
 
 
-# __Initial Observations__
+# __Observations__
 # - There are 7591 jpg files
 # - Each file has a file_name and a real_age label
 # - There are no duplicates
 # - There are no missing values
+# 
+# [Return to Top of Document](#top_of_document)
 
-# ## EDA
-
-# In[7]:
-
-
-# plot age distribution
-plt.figure(figsize=(14,8))
-plt.hist(labels.real_age, bins=100, density=True,)
-plt.title('Distribution of Age in Photos', fontsize=16)
-plt.show() 
-
+# <a class="anchor" id="data_preprocessing"></a>
+# 
+# ## Preprocessing Tasks
+# 
+# - ImageDataGenerator generator for batching images.
 
 # In[8]:
 
@@ -116,6 +143,23 @@ gen_flow = datagen.flow_from_dataframe(
         seed=12345)
 
 
+# [Return to Top of Document](#top_of_document)
+
+# <a class="anchor" id="exploratory_data_analysis"></a>
+# 
+# ## Exploratory Data Analysis
+# 
+
+# In[7]:
+
+
+# plot age distribution
+plt.figure(figsize=(14,8))
+plt.hist(labels.real_age, bins=100, density=True,)
+plt.title('Distribution of Age in Photos', fontsize=16)
+plt.show() 
+
+
 # In[10]:
 
 
@@ -136,42 +180,20 @@ def show_batch(batch, predictions=None):
 show_batch(next(gen_flow))
 
 
-# In[ ]:
-
-
-
-
-
-# ### Findings
-
 # __Observations__
 # - This is a regression model to predict age on a continuous scale
 # - Width_shift_range, height_shift_range arguments and horizontal_flip might be useful augmentations
 # - There output layer only needs one neuron to represent age
 # - Since this is a regression task, MSE is a suitable loss function
 # - The ReLu activation function is selected here because it doesn't change the positive numbers, and it brings all the negative ones to zero. There cannot be numbers less than zero.
-
-# ## Modelling
-
-# Define the necessary functions to train your model on the GPU platform and build a single script containing all of them along with the initialization section.
 # 
-# To make this task easier, you can define them in this notebook and run a ready code in the next section to automatically compose the script.
+# [Return to Top of Document](#top_of_document)
+
+# <a class="anchor" id="modeling_plan"></a>
 # 
-# The definitions below will be checked by project reviewers as well, so that they can understand how you built the model.
-
-# In[11]:
-
-
-import pandas as pd
-
-import tensorflow as tf
-
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.applications.resnet import ResNet50
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
-from tensorflow.keras.optimizers import Adam
-
+# ## Modeling plan
+# 
+# - Define the necessary functions to train your model on the GPU platform and build a single script containing all of them along with the initialization section.
 
 # In[12]:
 
@@ -275,13 +297,17 @@ def train_model(model, train_data, test_data, batch_size=None, epochs=20,
     return model
 
 
+# [Return to Top of Document](#top_of_document)
+
+# <a class="anchor" id="GPU_script"></a>
+# 
 # ## Prepare the Script to Run on the GPU Platform
+# 
 
 # Given you've defined the necessary functions you can compose a script for the GPU platform, download it via the "File|Open..." menu, and to upload it later for running on the GPU platform.
 # 
-# N.B.: The script should include the initialization section as well. An example of this is shown below.
 
-# In[16]:
+# In[ ]:
 
 
 # prepare a script to run on the GPU platform
@@ -312,9 +338,13 @@ with open('run_model_on_gpu.py', 'w') as f:
         f.write('\n\n')
 
 
-# ### Output
+# [Return to Top of Document](#top_of_document)
 
-# Place the output from the GPU platform as an Markdown cell here.
+# <a class="anchor" id="output"></a>
+# 
+# ## Output
+
+# The output from the GPU platform as an Markdown cell pasted below.
 
 # 2022-03-16 16:42:08.863734: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.6
 # 2022-03-16 16:42:09.504566: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.6
@@ -424,7 +454,13 @@ with open('run_model_on_gpu.py', 'w') as f:
 # 60/60 - 9s - loss: 62.9600 - mae: 5.9730
 # Test MAE: 5.9730
 
-# In[17]:
+# [Return to Top of Document](#top_of_document)
+
+# <a class="anchor" id="training_code"></a>
+# 
+# ## Training Code
+
+# In[ ]:
 
 
 ### training code used to with run as a .py file
@@ -560,14 +596,19 @@ with open('run_model_on_gpu.py', 'w') as f:
         f.write('\n\n')
 
 
+
+# <a class="anchor" id="conclusions"></a>
+# 
 # ## Conclusions
 
+# - This model meets the specifications of the customer for predicting a person's age from a photo.
 # - The overall MAE=5.9730 is below the limit of the score (8.0).
 # - The model used epochs=24, Adam lr=0.0001, and batch size of 32.
 # - Changing the batch size from 16 to 32 improved the performance markedly.
 # - ResNet50 was selected as the backbone.
 # - ReLU was used as the activation.
-# - For this model single neuron output indicating the predicted age of the person was created by running a photo through this model.
+
+# [Return to Top of Document](#top_of_document)
 
 # In[ ]:
 
