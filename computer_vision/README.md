@@ -5,10 +5,10 @@
 This convolutional neural network generates a model that predicts a person's age given a photo with a Mean Absolute Error (MAE)=5.973 (below the upper limit of 8.0). The model uses ResNet50 as the backbone, ReLU for activation, epochs=24, Adam lr=0.0001, and a batch size of 32. 
 
 __Project Overview__
-- They want a program that *determines a person's age from a photo*.
 - The Good Seed supermarket chain seeks to evaluate if machine learning can help them identify underage customers. 
 - They want to make sure they do not sell alcohol to people below the legal drinking age.
 - The store has cameras in the checkout area which are triggered when a person is buying alcohol.
+- They want a program that *determines a person's age from a photo*.
 
 __Data Description__
 - Data is available from [ChaLearn Looking at People](https://gesture.chalearn.org).
